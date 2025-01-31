@@ -141,7 +141,7 @@ function submitForm() {
         '[data-name="answerText"]',
       ).value;
       const isCorrect = answerBlock.querySelector(
-        '[data-name="correct"]',
+        'input[type="radio"]',
       ).checked;
 
       // Проверка текста ответа
@@ -157,6 +157,14 @@ function submitForm() {
       answers.push({ text: answerText, isCorrect });
     });
 
+    const isCorrect = block.querySelector('input[type="radio"]:checked');
+    // Проверка текста ответа
+    console.log(isCorrect);
+
+    if (isCorrect == null) {
+      isValid = false;
+    }
+
     // Добавляем вопрос только если есть корректные ответы
     if (answers.length > 0) {
       questions.push({ id: questionId, text: questionText, answers });
@@ -165,7 +173,7 @@ function submitForm() {
 
   // Прекращаем выполнение, если валидация провалена
   if (!isValid) {
-    alert('Пожалуйста, заполните все обязательные поля!');
+    alert('Пожалуйста, заполните все поля!');
     return;
   }
 
