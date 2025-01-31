@@ -1,0 +1,176 @@
+.quizAdd {
+    display: flex;
+    flex-direction: column;
+
+    &-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #ebf6f5;
+
+        .content {
+            &__title {
+                color: #5cbdb9;
+                font-weight: 300;
+                margin: 30px 0 20px 0;
+                font-size: 40px;
+            }
+        }
+    }
+
+    &-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 80%;
+        row-gap: 20px;
+
+        label {
+            display: flex;
+            flex-direction: column;
+            row-gap: 5px;
+        }
+
+        input {
+            height: 40px;
+            padding: 2px 20px;
+            border-radius: 20px;
+            border: 1px solid #ccc;
+            outline: none;
+        }
+
+        .form {
+            &-title {
+                display: flex;
+                flex-direction: column;
+                row-gap: 20px;
+                width: 100%;
+
+                &__desc {
+                    height: 100px;
+                    padding: 10px 20px;
+                    border-radius: 20px;
+                    border: 1px solid #ccc;
+                    outline: none;
+                    resize: none;
+                }
+            }
+
+            &-item {
+                display: flex;
+                align-items: center;
+                row-gap: 20px;
+                flex-direction: column;
+                margin-bottom: 50px;
+
+                .item {
+                    &-container {
+                        display: flex;
+                        column-gap: 20px;
+                    }
+
+                    &__quest {
+                        height: 270px;
+                        width: 300px;
+                        resize: none;
+                        border: 1px #ccc solid;
+                        border-radius: 20px;
+                        outline: none;
+                        padding: 10px 20px;
+                    }
+
+                    &-answers {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        row-gap: 20px;
+                    }
+
+                    &-answer {
+                        display: flex;
+                        align-items: center;
+                        column-gap: 10px;
+
+                        textarea {
+                            outline: none;
+                            resize: none;
+                            border-radius: 20px;
+                            border: 1px #ccc solid;
+                            padding: 10px 20px;
+                            width: 500px;
+                            height: 70px;
+                        }
+
+                        input[type="radio"] {
+                            appearance: none;
+                            border-radius: 50%;
+                            padding: 0;
+                            width: 25px;
+                            height: 25px;
+                            border: 2px #ccc solid;
+                            transition: 0.2s all linear;
+
+                            &:checked {
+                                border: 6px #5cbdb9 solid !important;
+                            }
+                        }
+                    }
+
+                    &-answer-buttons {
+                        display: flex;
+                        justify-content: end;
+                        column-gap: 20px;
+                        width: 100%;
+
+                        button {
+                            width: 200px;
+                            height: 50px;
+                            border: 1px #ccc solid;
+                            border-radius: 20px;
+                            background-color: #fff;
+                            cursor: pointer;
+
+                            &:hover {
+                                background-color: #fbe3e8;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &-quest-buttons {
+                display: flex;
+                column-gap: 20px;
+                width: 100%;
+
+                button {
+                    width: 200px;
+                    height: 50px;
+                    border: 1px #ccc solid;
+                    border-radius: 20px;
+                    background-color: #fff;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: #fbe3e8;
+                    }
+                }
+            }
+
+            &-submit-button {
+                width: 400px;
+                height: 70px;
+                border: 1px #ccc solid;
+                border-radius: 20px;
+                background-color: #fff;
+                cursor: pointer;
+                margin: 50px 0;
+
+                &:hover {
+                    background-color: #fbe3e8;
+                }
+            }
+        }
+    }
+}

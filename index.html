@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Страница регистрации</title>
+    <link rel="stylesheet" href="/styles/styles.css" />
+    <link rel="stylesheet" href="/index.css" />
+    <script src="/script.js" defer></script>
+    <script src="/defIndex.js"></script>
+  </head>
+  <body>
+    <section class="home">
+      <div class="home__register">
+        <button class="home__register-button" onclick="openModal()">
+          Регистрация
+        </button>
+      </div>
+
+      <form class="home-login-form" id="loginForm">
+        <label for="login">
+          Логин <br />
+          <input type="text" placeholder="login" name="login" />
+        </label>
+
+        <label for="password">
+          Пароль <br />
+          <input type="text" placeholder="password" name="pass" />
+        </label>
+
+        <button type="button" onclick="loginButton()">Войти</button>
+      </form>
+
+      <div class="home-modal" id="registerModal">
+        <div class="modal-content">
+          <button class="modal-close" onclick="closeModal()">&times;</button>
+
+          <h3 class="modal-content__title">Регистрация</h3>
+
+          <form class="modal-register-form" id="registerForm">
+            <label>
+              Введите Имя <br />
+              <input type="text" placeholder="name" name="username" />
+            </label>
+
+            <label>
+              Введите Фамилию <br />
+              <input type="text" placeholder="surname" name="surname" />
+            </label>
+
+            <label>
+              Введите Логин <br />
+              <input type="text" placeholder="login" name="login" />
+            </label>
+
+            <label>
+              Введите Пароль <br />
+              <input type="text" placeholder="password" name="pass" />
+            </label>
+
+            <label>
+              Повторите пароль <br />
+              <input
+                type="text"
+                placeholder="repeat password"
+                name="repeatpass"
+              />
+            </label>
+
+            <label>
+              Введите email <br />
+              <input type="text" placeholder="email" name="email" />
+            </label>
+
+            <button type="button" onclick="registerButton()">
+              Зарегистрироваться
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

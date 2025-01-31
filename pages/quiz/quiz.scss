@@ -1,0 +1,92 @@
+.quiz {
+  display: flex;
+  flex-direction: column;
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #ebf6f5;
+
+    .content {
+      &__title {
+        color: #5cbdb9;
+        font-weight: 300;
+        margin: 30px 0 20px 0;
+        font-size: 40px;
+      }
+
+      &-items {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 50px;
+        margin: 50px 0;
+      }
+
+      &__item {
+        width: 80%;
+        padding: 50px 30px 70px 30px;
+        display: flex;
+        align-items: center;
+        background-color: #8ffff6;
+        border-radius: 20px;
+        column-gap: 70px;
+        position: relative;
+
+        .item {
+          &__title {
+            margin: 0;
+          }
+
+          &__desc {
+            margin: 0;
+            max-width: 500px;
+          }
+        }
+
+        button {
+          width: 200px;
+          height: 40px;
+          border-radius: 20px;
+          position: absolute;
+          border: none;
+          right: 20px;
+          bottom: 20px;
+          background-color: #ffffff;
+
+          &:hover {
+            background-color: #fbe3e8;
+          }
+        }
+      }
+
+      &__link {
+        display: flex;
+        justify-content: center;
+        text-decoration: none;
+        color: #5cbdb9;
+        font-size: 50px;
+        width: 100%;
+      }
+
+      &__item-add {
+        width: 80%;
+        height: 120px;
+        padding: 30px 20px;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        background-color: #ffffff;
+        border-radius: 20px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #fbe3e8;
+        }
+      }
+    }
+  }
+}

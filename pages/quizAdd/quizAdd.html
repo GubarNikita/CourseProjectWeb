@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Добавление теста</title>
+    <link rel="stylesheet" href="/styles/styles.css" />
+    <link rel="stylesheet" href="/styles/footer.css" />
+    <link rel="stylesheet" href="/styles/header.css" />
+    <link rel="stylesheet" href="./quizAdd.css" />
+    <script src="/quizAdd.js" defer></script>
+    <script src="/def.js"></script>
+  </head>
+  <body>
+    <section class="quizAdd">
+      <header class="header">
+        <nav class="header-navbar">
+          <a class="navbar__link" href="/pages/main/main.html">Главная</a>
+          <a class="navbar__link" href="/pages/quiz/quiz.html">Тесты</a>
+          <a class="navbar__link" href="/pages/profile/profile.html">Профиль</a>
+          <div class="navbar__link" onclick="logout()">Выход</div>
+        </nav>
+      </header>
+
+      <section class="quizAdd-content">
+        <h1 class="content__title">Создание теста</h1>
+
+        <form id="quizForm" class="quizAdd-form">
+          <!-- Заголовок и описание теста -->
+          <fieldset class="form-title">
+            <legend>Информация о тесте</legend>
+            <label>
+              Название теста
+              <input type="text" id="quizTitle" name="quizTitle" />
+            </label>
+            <label>
+              Описание теста
+              <textarea
+                class="form-title__desc"
+                id="quizDescription"
+                name="quizDescription"
+                rows="4"
+                cols="50"
+              ></textarea>
+            </label>
+            <label>
+              Время на прохождение теста (мин)
+              <input type="number" id="timeInput" min="0" step="1" />
+            </label>
+          </fieldset>
+
+          <!-- Контейнер для вопросов -->
+          <div id="questionsContainer">
+            <!-- Пример вопроса -->
+            <div class="form-item questionBlock" data-question-id="1">
+              <div class="item-container">
+                <label>
+                  Вопрос
+                  <textarea
+                    class="item__quest"
+                    name="questionText"
+                    data-name="questionText"
+                  ></textarea>
+                </label>
+
+                <!-- Варианты ответов -->
+                <div class="item-answers answersContainer">
+                  <label>Варианты ответов</label>
+                  <div class="item-answer" data-answer-id="1">
+                    <textarea
+                      class="answer-text"
+                      name="answerText"
+                      data-name="answerText"
+                    ></textarea>
+                    <input
+                      type="radio"
+                      name="correctAnswer1"
+                      data-name="correct"
+                      value="1"
+                    />
+                  </div>
+
+                  <div class="item-answer" data-answer-id="2">
+                    <textarea
+                      class="answer-text"
+                      name="answerText"
+                      data-name="answerText"
+                    ></textarea>
+                    <input
+                      type="radio"
+                      name="correctAnswer1"
+                      data-name="correct"
+                      value="2"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="item-answer-buttons">
+                <button type="button" onclick="addAnswer(1)">
+                  Добавить вариант ответа
+                </button>
+                <button type="button" onclick="removeAnswer(1)">
+                  Удалить последний вариант ответа
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Кнопки управления вопросами -->
+          <div class="form-quest-buttons">
+            <button
+              type="button"
+              id="addQuestionButton"
+              onclick="addQuestion()"
+            >
+              Добавить вопрос
+            </button>
+            <button type="button" onclick="removeQuestion()">
+              Удалить последний вопрос
+            </button>
+          </div>
+
+          <button
+            class="form-submit-button"
+            type="button"
+            onclick="submitForm()"
+          >
+            Сформировать JSON
+          </button>
+        </form>
+      </section>
+
+      <footer class="footer">
+        <p>&copy; 2025 Все права защищены.</p>
+      </footer>
+    </section>
+  </body>
+</html>
